@@ -5,6 +5,9 @@ import math
 import pandas as pd
 from tabulate import tabulate
 
+cache_vol = {}
+cache_sa = {}
+
 def n_sphere_vol(n: int, r: int)-> int:
     """Recursive algorithm to calculate the volume of an n-dimensional sphere"""
 
@@ -35,8 +38,9 @@ def n_sphere_surface_area(n: int, r: int)-> int:
         return (2 * math.pi)/(n-2) * n_sphere_surface_area(n-2, 1)
 
 data = []
-for n in range(1, 11):
-    data.append([f"{n}-Dimensional Sphere", n_sphere_vol(n, 1), n_sphere_surface_area(n, 1)])
+for n in range(1, 31):
+    data.append([n, n_sphere_vol(n, 1), n_sphere_surface_area(n, 1)])
+
 
 col_headers = ["Dimensions", "Volume", "Surface Area"]
 df = pd.DataFrame(data, columns = col_headers)
