@@ -6,5 +6,4 @@ The assignment asked us to consider why a sphere's volume decreases beyond 5-dim
 </br>
 </br>
 TODO: Add discussion of volume and SA reduction.
-</br>
-TODO: Add memoization for higher calculations. 
+
